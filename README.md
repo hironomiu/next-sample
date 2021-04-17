@@ -8,7 +8,9 @@
 
 ## Memo
 
-### create-next-app
+### Next.js
+
+#### create-next-app
 
 ```
 Creating a new Next.js app in /next-sample.
@@ -43,7 +45,7 @@ We suggest that you begin by typing:
   npm run dev
 ```
 
-### PORT
+#### PORT
 
 `package.json`
 
@@ -54,4 +56,44 @@ We suggest that you begin by typing:
     "build": "next build",
 -    "start": "next start"
 +    "start": "next start --port 3003"
+```
+
+### Tailwind
+
+[公式](https://tailwindcss.com/)
+[チートシート](https://nerdcave.com/tailwind-cheat-sheet)
+
+#### Installation Next.js
+
+[tailwindcss/nextjs](https://tailwindcss.com/docs/guides/nextjs)
+
+install
+
+```
+$ npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+added 85 packages, changed 1 package, and audited 362 packages in 4s
+
+57 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+```
+
+init
+
+```
+$ npx tailwindcss init -p
+
+   tailwindcss 2.1.1
+
+   ✅ Created Tailwind config file: tailwind.config.js
+   ✅ Created PostCSS config file: postcss.config.js
+```
+
+`tailwind.config.js`
+
+```
+-   purge: [],
++   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
 ```
