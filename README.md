@@ -1,10 +1,18 @@
 # next-vercel-sample
 
+Next.js + Vercel のサンプル
+
 ## Vercel
 
 ### deploy
 
 [deploying-nextjs-app/deploy](https://nextjs.org/learn/basics/deploying-nextjs-app/deploy)
+
+## run
+
+```
+npm run dev
+```
 
 ## Memo
 
