@@ -1,4 +1,4 @@
-# next-sample
+# next-vercel-sample
 
 ## Vercel
 
