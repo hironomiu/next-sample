@@ -1,29 +1,23 @@
 import Layout from "../components/Layout"
-import { useEffect, useState } from "react"
-import { resolveHref } from "next/dist/next-server/lib/router/router"
 
-export default function Home() {
-  const [datas, setData] = useState([])
-  const func = async () => {
-    const response = await fetch("/api/hoge")
-    const posts = await response.json()
-    return posts
-  }
-
-  useEffect(() => {
-    func().then((data) => {
-      console.log(data)
-      data.map((a) => setData((datas) => [...datas, a]))
-    })
-  }, [])
-
+const Home = (props) => {
+  const lines = Object.values(props)
   return (
     <Layout>
-      {datas.map((a, i) => (
-        <p key={i}>
-          id:{a.id},name:{a.name}
+      {lines.map((line, index) => (
+        <p key={index}>
+          id:{line.id},name:{line.name}
         </p>
       ))}
     </Layout>
   )
 }
+
+Home.getInitialProps = async ({ req }) => {
+  const url = process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3003"
+  const response = await fetch(url + "/api/hoge")
+  const posts = await response.json()
+  return posts
+}
+
+export default Home

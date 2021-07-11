@@ -8,6 +8,18 @@ Next.js + Vercel のサンプル
 
 [deploying-nextjs-app/deploy](https://nextjs.org/learn/basics/deploying-nextjs-app/deploy)
 
+### CLI
+
+```
+npm i -g vercel
+```
+
+nodenv で管理してる場合はコマンドが認識されない可能性があるので`rehash`をする
+
+```
+nodenv rehash
+```
+
 ## run
 
 ```
