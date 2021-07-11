@@ -15,6 +15,7 @@ const Home = (props) => {
 
 Home.getInitialProps = async ({ req }) => {
   const url = process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3003/"
+  console.log(url)
   const response = await fetch(url + "api/hoge")
   const posts = await response.json()
   return posts
