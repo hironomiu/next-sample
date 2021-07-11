@@ -3,23 +3,27 @@ import { useEffect, useState } from "react"
 import { resolveHref } from "next/dist/next-server/lib/router/router"
 
 export default function Home() {
-  const [name, setName] = useState("hello")
+  const [datas, setData] = useState([])
   const func = async () => {
-    const rest = await fetch("/api/hoge")
-    const posts = await rest.json()
-    return posts.name
+    const response = await fetch("/api/hoge")
+    const posts = await response.json()
+    return posts
   }
 
   useEffect(() => {
     func().then((data) => {
       console.log(data)
-      setName(data)
+      data.map((a) => setData((datas) => [...datas, a]))
     })
   }, [])
 
   return (
     <Layout>
-      <p>{name}</p>
+      {datas.map((a, i) => (
+        <p key={i}>
+          id:{a.id},name:{a.name}
+        </p>
+      ))}
     </Layout>
   )
 }
