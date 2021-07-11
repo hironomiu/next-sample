@@ -14,8 +14,8 @@ const Home = (props) => {
 }
 
 Home.getInitialProps = async ({ req }) => {
-  const url = process.env.NEXT_PUBLIC_VERCEL_URL.VERCEL_URL
-    ? "https://" + process.env.NEXT_PUBLIC_VERCEL_URL.VERCEL_URL
+  const url = process.env.VERCEL_URL
+    ? "https://" + process.env.VERCEL_URL
     : "http://localhost:3003"
   console.log(url)
   const response = await fetch(url + "/api/hoge")
