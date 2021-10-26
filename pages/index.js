@@ -1,4 +1,4 @@
-import Layout from "../components/Layout"
+import Layout from '../components/Layout'
 
 const Home = (props) => {
   const lines = Object.values(props)
@@ -15,10 +15,10 @@ const Home = (props) => {
 
 Home.getInitialProps = async ({ req }) => {
   const url = process.env.VERCEL_URL
-    ? "https://" + process.env.VERCEL_URL
-    : "http://localhost:3003"
+    ? 'https://' + process.env.VERCEL_URL
+    : 'http://localhost:3003'
   console.log(url)
-  const response = await fetch(url + "/api/hoge")
+  const response = await fetch(url + '/api/hoge')
   const posts = await response.json()
   return posts
 }
