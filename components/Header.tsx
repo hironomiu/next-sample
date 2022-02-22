@@ -8,6 +8,9 @@ const Header = () => {
         <Link href="/">
           <a>Home</a>
         </Link>
+        <Link href="users">
+          <a>Users</a>
+        </Link>
         <Link href="tab-a">
           <a>TabA</a>
         </Link>
