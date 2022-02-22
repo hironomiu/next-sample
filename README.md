@@ -1,6 +1,6 @@
 # next-vercel-sample
 
-Next.js + Vercel のサンプル
+TypeScript + Next.js + Vercel のサンプル
 
 ## Vercel
 
