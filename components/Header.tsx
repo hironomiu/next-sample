@@ -6,13 +6,13 @@ const Header = () => {
       <div className="space-x-3">
         <span>Header</span>
         <Link href="/">
-          <a>Home</a>
+          <a className="hover:bg-gray-100 py-1 px-1 rounded">Home</a>
         </Link>
-        <Link href="users">
-          <a>Users</a>
+        <Link href="/users">
+          <a className="hover:bg-gray-100 py-1 px-1 rounded">Users</a>
         </Link>
-        <Link href="tab-a">
-          <a>TabA</a>
+        <Link href="/tab-a">
+          <a className="hover:bg-gray-100 py-1 px-1 rounded">TabA</a>
         </Link>
       </div>
     </header>

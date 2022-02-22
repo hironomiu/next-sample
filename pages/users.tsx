@@ -1,11 +1,20 @@
 import Layout from '../components/Layout'
-const Users = (props) => {
-  const lines = Object.values(props)
+import { GetStaticProps } from 'next'
+
+type POST = {
+  id: number
+  name: string
+}
+
+interface STATICPROPS {
+  posts: POST[]
+}
+
+const Users: React.FC<STATICPROPS> = (props) => {
   return (
     <Layout>
       <h1 className="text-2xl pb-10">Users</h1>
-      {/* TODO 型 */}
-      {lines.map((line: any, index) => (
+      {props.posts.map((line: POST, index) => (
         <p key={index}>
           id:{line.id},name:{line.name}
         </p>
@@ -14,14 +23,15 @@ const Users = (props) => {
   )
 }
 
-Users.getInitialProps = async ({ req }) => {
+export const getStaticProps: GetStaticProps = async () => {
   const url = process.env.VERCEL_URL
     ? 'https://' + process.env.VERCEL_URL
     : 'http://localhost:3003'
-  console.log(url)
-  const response = await fetch(url + '/api/users')
+  const response = await fetch(new URL(url + '/api/users').toString())
   const posts = await response.json()
-  return posts
+  return {
+    props: { posts },
+  }
 }
 
 export default Users
