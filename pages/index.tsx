@@ -1,10 +1,11 @@
-import Layout from '../components/Layout'
+import Layout from "../components/Layout"
 
 const Home = (props) => {
   const lines = Object.values(props)
   return (
     <Layout>
-      {lines.map((line, index) => (
+      {/* TODO 型 */}
+      {lines.map((line:any, index) => (
         <p key={index}>
           id:{line.id},name:{line.name}
         </p>

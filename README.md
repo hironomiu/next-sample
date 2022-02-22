@@ -26,44 +26,18 @@ nodenv rehash
 npm run dev
 ```
 
-## Memo
+## Install Memo
 
 ### Next.js
 
-#### create-next-app
-
 ```
-Creating a new Next.js app in /next-sample.
-
-Installing react, react-dom, and next using npm...
-
-
-added 276 packages, and audited 277 packages in 8s
-
-44 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-Initialized a git repository.
-
-Success! Created next-sample at /next-sample
-Inside that directory, you can run several commands:
-
-  npm run dev
-    Starts the development server.
-
-  npm run build
-    Builds the app for production.
-
-  npm start
-    Runs the built app in production mode.
-
-We suggest that you begin by typing:
-
-  cd /Users/h-miura/Desktop/next-sample
-  npm run dev
+npx create-next-app .
 ```
+
+### TypeScript
+
+[TypeScript](https://nextjs.org/learn/excel/typescript/create-tsconfig)
+
 
 #### PORT
 
@@ -91,25 +65,13 @@ We suggest that you begin by typing:
 install
 
 ```
-$ npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
-added 85 packages, changed 1 package, and audited 362 packages in 4s
-
-57 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 ```
 
 init
 
 ```
-$ npx tailwindcss init -p
-
-   tailwindcss 2.1.1
-
-   ✅ Created Tailwind config file: tailwind.config.js
-   ✅ Created PostCSS config file: postcss.config.js
+npx tailwindcss init -p
 ```
 
 `tailwind.config.js`
