@@ -25,6 +25,8 @@ const Users: React.FC = () => {
   )
 }
 
+// TODO Build時に自身のAPIは叩けないのでエラーとなってる可能性がある
+
 // export const getStaticProps: GetStaticProps = async () => {
 //   const url = process.env.VERCEL_URL
 //     ? 'https://' + process.env.VERCEL_URL
