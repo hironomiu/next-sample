@@ -13,12 +13,13 @@ interface STATICPROPS {
 const Users: React.FC<STATICPROPS> = (props) => {
   return (
     <Layout>
-      <h1 className="text-2xl pb-10">Users</h1>
+      {/* <h1 className="text-2xl pb-10">Users</h1>
       {props.posts.map((line: POST, index) => (
         <p key={index}>
           id:{line.id},name:{line.name}
         </p>
-      ))}
+      ))} */}
+      User
     </Layout>
   )
 }
