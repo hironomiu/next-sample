@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
       <Header />
 
       <main className="flex flex-1 justify-center items-center flex-col w-screen">
-        {children}
+        <div className="flex flex-col items-start">{children}</div>
       </main>
       <Footer />
     </div>
