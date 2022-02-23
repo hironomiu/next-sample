@@ -10,7 +10,8 @@ interface STATICPROPS {
   posts: POST[]
 }
 
-const Users: React.FC<STATICPROPS> = (props) => {
+// const Users: React.FC<STATICPROPS> = (props) => {
+const Users: React.FC = () => {
   return (
     <Layout>
       {/* <h1 className="text-2xl pb-10">Users</h1>
@@ -24,15 +25,15 @@ const Users: React.FC<STATICPROPS> = (props) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const url = process.env.VERCEL_URL
-    ? 'https://' + process.env.VERCEL_URL
-    : 'http://localhost:3003'
-  const response = await fetch(new URL(url + '/api/users').toString())
-  const posts = await response.json()
-  return {
-    props: { posts },
-  }
-}
+// export const getStaticProps: GetStaticProps = async () => {
+//   const url = process.env.VERCEL_URL
+//     ? 'https://' + process.env.VERCEL_URL
+//     : 'http://localhost:3003'
+//   const response = await fetch(new URL(url + '/api/users').toString())
+//   const posts = await response.json()
+//   return {
+//     props: { posts },
+//   }
+// }
 
 export default Users
