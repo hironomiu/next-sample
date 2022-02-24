@@ -13,7 +13,6 @@ interface STATICPROPS {
 }
 
 const Users: React.FC<STATICPROPS> = (props) => {
-  // const Users: React.FC = () => {
   return (
     <Layout>
       <h1 className="text-2xl pb-10">Users</h1>
@@ -27,6 +26,7 @@ const Users: React.FC<STATICPROPS> = (props) => {
 }
 
 // TODO Build時に自身のAPIは叩けないのでエラーとなってる可能性がある
+// ↑一旦jsonplaceholderからデータを取得に変更
 
 export const getStaticProps: GetStaticProps = async () => {
   // const url = process.env.VERCEL_URL
