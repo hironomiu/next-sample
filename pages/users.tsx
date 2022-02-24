@@ -27,15 +27,15 @@ const Users: React.FC = () => {
 
 // TODO Build時に自身のAPIは叩けないのでエラーとなってる可能性がある
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   const url = process.env.VERCEL_URL
-//     ? 'https://' + process.env.VERCEL_URL
-//     : 'http://localhost:3003'
-//   const response = await fetch(new URL(url + '/api/users').toString())
-//   const posts = await response.json()
-//   return {
-//     props: { posts },
-//   }
-// }
+export const getStaticProps: GetStaticProps = async () => {
+  const url = process.env.VERCEL_URL
+    ? 'https://' + process.env.VERCEL_URL
+    : 'http://localhost:3003'
+  const response = await fetch(new URL(url + '/api/users').toString())
+  const posts = await response.json()
+  return {
+    props: { posts },
+  }
+}
 
 export default Users
