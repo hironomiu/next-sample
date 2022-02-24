@@ -20,10 +20,22 @@ nodenv で管理してる場合はコマンドが認識されない可能性が�
 nodenv rehash
 ```
 
-## run
+## Run
 
 ```
 npm run dev
+```
+
+## Build
+
+```
+npm run build
+```
+
+## Testin
+
+```
+npm test
 ```
 
 ## Install Memo
