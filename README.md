@@ -38,7 +38,6 @@ npx create-next-app .
 
 [TypeScript](https://nextjs.org/learn/excel/typescript/create-tsconfig)
 
-
 #### PORT
 
 `package.json`
@@ -79,4 +78,25 @@ npx tailwindcss init -p
 ```
 -   purge: [],
 +   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+```
+
+### Testing
+
+```
+npm install --save-dev jest @testing-library/react @types/jest @testing-library/jest-dom @testing-library/dom
+```
+
+```
+npm install --save-dev  @babel/plugin-syntax-jsx
+npm install --save-dev @babel/preset-react
+```
+
+`./.babelrc`
+
+```
+{
+    "presets": [
+        "next/babel"
+    ]
+}
 ```
