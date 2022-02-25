@@ -4,7 +4,7 @@ const Home = (props) => {
   const lines = Object.values(props)
   return (
     <Layout>
-      <h1 className="text-2xl">Home</h1>
+      <h1 className="text-2xl">Home Page</h1>
     </Layout>
   )
 }
