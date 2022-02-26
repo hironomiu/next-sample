@@ -12,13 +12,18 @@ interface STATICPROPS {
   posts: POST[]
 }
 
-const Users: React.FC<STATICPROPS> = (props) => {
+const Posts: React.FC<STATICPROPS> = (props) => {
   return (
     <Layout>
-      <h1 className="text-2xl pb-10">Users</h1>
+      <h1 className="text-2xl pb-10">Posts Page</h1>
       {props.posts.map((line: POST, index) => (
         <p key={line.id}>
-          userId:{line.userId},id:{line.id},title:{line.title}
+          {'userId: '}
+          {line.userId}
+          {' ,id: '}
+          {line.id}
+          {' ,title: '}
+          {line.title}
         </p>
       ))}
     </Layout>
@@ -42,4 +47,4 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default Users
+export default Posts

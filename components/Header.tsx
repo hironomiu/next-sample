@@ -8,8 +8,8 @@ const Header = () => {
         <Link href="/">
           <a className="hover:bg-gray-100 py-1 px-1 rounded">Home</a>
         </Link>
-        <Link href="/users">
-          <a className="hover:bg-gray-100 py-1 px-1 rounded">Users</a>
+        <Link href="/posts">
+          <a className="hover:bg-gray-100 py-1 px-1 rounded">Posts</a>
         </Link>
         <Link href="/tab-a">
           <a className="hover:bg-gray-100 py-1 px-1 rounded">TabA</a>
