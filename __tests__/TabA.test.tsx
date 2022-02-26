@@ -5,6 +5,6 @@ import TabA from '../pages/tab-a'
 describe('', () => {
   it('', async () => {
     render(<TabA />)
-    expect(await screen.getByText('TabA Page')).toBeInTheDocument()
+    expect(await screen.findByText('TabA Page')).toBeInTheDocument()
   })
 })
