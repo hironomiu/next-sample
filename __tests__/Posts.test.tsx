@@ -26,5 +26,8 @@ describe('', () => {
     expect(
       screen.getByText('userId: 1 ,id: 1 ,title: dummy title 1')
     ).toBeInTheDocument()
+    expect(
+      screen.getByText('userId: 2 ,id: 2 ,title: dummy title 2')
+    ).toBeInTheDocument()
   })
 })
