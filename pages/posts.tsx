@@ -1,22 +1,12 @@
 import Layout from '../components/Layout'
 import { GetStaticProps } from 'next'
+import { POST } from './types'
 
-type POST = {
-  userId: number
-  id: number
-  title: string
-  body: string
-}
-
-interface STATICPROPS {
-  posts: POST[]
-}
-
-const Posts: React.FC<STATICPROPS> = (props) => {
+const Posts: React.FC<{ posts: POST[] }> = ({ posts }) => {
   return (
     <Layout>
       <h1 className="text-2xl pb-10">Posts Page</h1>
-      {props.posts.map((line: POST, index) => (
+      {posts.map((line: POST) => (
         <p key={line.id}>
           {'userId: '}
           {line.userId}
