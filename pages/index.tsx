@@ -1,7 +1,6 @@
 import Layout from '../components/Layout'
 
-const Home = (props) => {
-  const lines = Object.values(props)
+const Home = () => {
   return (
     <Layout>
       <h1 className="text-2xl">Home Page</h1>

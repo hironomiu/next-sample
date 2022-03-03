@@ -29,6 +29,14 @@ const Header = () => {
             TabA
           </a>
         </Link>
+        <Link href="/counter">
+          <a
+            className="hover:bg-gray-100 py-1 px-1 rounded"
+            data-testid="counter-nav"
+          >
+            Counter
+          </a>
+        </Link>
       </div>
     </header>
   )
