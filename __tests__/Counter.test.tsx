@@ -4,6 +4,10 @@ import Counter from '../pages/counter'
 import userEvent from '@testing-library/user-event'
 
 describe('Counter', () => {
+  it('', () => {
+    render(<Counter />)
+    expect(screen.getByText('Counter Page')).toBeInTheDocument()
+  })
   it('decrement', () => {
     render(<Counter />)
     expect(screen.getByTestId('counter').textContent).toBe('0')
