@@ -4,10 +4,6 @@ import Home from '../pages/index'
 import userEvent from '@testing-library/user-event'
 import Link from 'next/link'
 
-// jest.mock('next/link', () => ({
-//   Link: jest.fn(),
-// }))
-
 jest.mock(
   'next/link',
   () =>
