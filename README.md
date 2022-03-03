@@ -95,7 +95,7 @@ npx tailwindcss init -p
 ### Testing
 
 ```
-npm install --save-dev jest @testing-library/react @types/jest @testing-library/jest-dom @testing-library/dom
+npm install --save-dev jest @testing-library/react @types/jest @testing-library/jest-dom @testing-library/dom @testing-library/user-event
 ```
 
 ```
