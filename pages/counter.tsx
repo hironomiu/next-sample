@@ -1,13 +1,13 @@
 import Layout from '../components/Layout'
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 const Counter = () => {
   const [counter, setCounter] = useState<number>(0)
-  const handleDecrement = () => {
+  const handleDecrement = useCallback(() => {
     setCounter((prevCounter) => (prevCounter = prevCounter - 1))
-  }
-  const handleIncrement = () => {
+  }, [])
+  const handleIncrement = useCallback(() => {
     setCounter((prevCounter) => (prevCounter = prevCounter + 1))
-  }
+  }, [])
 
   return (
     <Layout>
