@@ -4,7 +4,7 @@ import Counter from '../pages/counter'
 import userEvent from '@testing-library/user-event'
 
 describe('Counter', () => {
-  it('', () => {
+  it('Page rendered', () => {
     render(<Counter />)
     expect(screen.getByText('Counter Page')).toBeInTheDocument()
   })
