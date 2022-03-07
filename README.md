@@ -109,6 +109,7 @@ npm install --save-dev @babel/preset-react
 {
     "presets": [
         "next/babel"
-    ]
+    ],
+    "parser": "@babel/eslint-parser"
 }
 ```
