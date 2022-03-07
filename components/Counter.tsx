@@ -1,6 +1,7 @@
-import { memo, useState, useCallback } from 'react'
+import { useState, useCallback } from 'react'
 
-const Counter = memo(() => {
+// TODO memoを使うと `3:17  Error: Component definition is missing display name  react/display-name`で怒られる
+const Counter = () => {
   const [counter, setCounter] = useState<number>(0)
   const handleDecrement = useCallback(() => {
     setCounter((prevCounter) => (prevCounter = prevCounter - 1))
@@ -34,6 +35,6 @@ const Counter = memo(() => {
       </div>
     </>
   )
-})
+}
 
 export default Counter
