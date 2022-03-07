@@ -113,3 +113,11 @@ npm install --save-dev @babel/preset-react
     "parser": "@babel/eslint-parser"
 }
 ```
+
+### Next12 へバージョンアップ後に追加でインストールしたもの
+
+```
+npm install --save-dev eslint
+npm install --save-dev @babel/eslint-parser
+npm install --save-dev eslint-config-next
+```
