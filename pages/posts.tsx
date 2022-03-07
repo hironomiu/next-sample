@@ -1,6 +1,6 @@
 import Layout from '../components/Layout'
 import { GetStaticProps } from 'next'
-import { POST } from './types'
+import { POST } from '../types'
 
 const Posts: React.FC<{ posts: POST[] }> = ({ posts }) => {
   return (
