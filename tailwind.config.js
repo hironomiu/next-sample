@@ -1,4 +1,3 @@
-// TODO eslint?エラー
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
