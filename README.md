@@ -121,3 +121,25 @@ npm install --save-dev eslint
 npm install --save-dev @babel/eslint-parser
 npm install --save-dev eslint-config-next
 ```
+
+Next v12 に対応したのでインストール
+
+```
+npm install --save-dev next-page-tester
+npm install --save-dev jest-css-modules
+```
+
+`package.json`(`moduleNameMapper`を追加)
+
+```
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/.next/",
+      "<rootDir>/node_modules/"
+    ],
+    "moduleNameMapper": {
+      "\\.(css)$": "<rootDir>/node_modules/jest-css-modules"
+    },
+    "testEnvironment": "jsdom"
+  }
+```
