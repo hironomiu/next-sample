@@ -122,7 +122,7 @@ npm install --save-dev @babel/eslint-parser
 npm install --save-dev eslint-config-next
 ```
 
-Next v12 に対応したのでインストール
+`next-page-tester`が Next v12 に対応したのでインストール
 
 ```
 npm install --save-dev next-page-tester
