@@ -15,7 +15,7 @@ const Posts: React.FC<{ posts: POST[] }> = ({ posts }) => {
 }
 
 // TODO Build時に自身のAPIは叩けないのでエラーとなってる可能性がある
-// ↑一旦jsonplaceholderからデータを取得に変更
+// 一旦jsonplaceholderからデータを取得に変更
 
 export const getStaticProps: GetStaticProps = async () => {
   // const url = process.env.VERCEL_URL
