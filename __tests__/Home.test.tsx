@@ -21,5 +21,8 @@ describe('Homeの表示テスト', () => {
 
     userEvent.click(screen.getByTestId('counter-nav'))
     expect(await screen.findByText('Counter Page')).toBeInTheDocument()
+
+    userEvent.click(screen.getByTestId('tab-a-nav'))
+    expect(await screen.findByText('TabA Page')).toBeInTheDocument()
   })
 })
