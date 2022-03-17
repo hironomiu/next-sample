@@ -143,3 +143,13 @@ npm install --save-dev jest-css-modules
     "testEnvironment": "jsdom"
   }
 ```
+
+```
+npm install msw
+```
+
+`fetch`をモックする際に必要(`ReferenceError: fetch is not defined`で怒られる)テストコードに`import whatwg-fetch`を行う
+
+```
+npm install --save-dev whatwg-fetch
+```

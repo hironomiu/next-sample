@@ -1,8 +1,52 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import Posts from '../pages/posts'
+import { getPage, initTestHelpers } from 'next-page-tester'
+import { rest } from 'msw'
+import { setupServer } from 'msw/node'
+import 'whatwg-fetch'
 
-describe('', () => {
+initTestHelpers()
+
+const handlers = [
+  rest.get('https://jsonplaceholder.typicode.com/posts', (req, res, ctx) => {
+    const query = req.url.searchParams
+    const _limit = query.get('_limit=10')
+    return res(
+      ctx.status(200),
+      ctx.json([
+        {
+          userId: 1,
+          id: 1,
+          title: 'mock title 1',
+          body: 'mock body 1',
+        },
+        {
+          userId: 2,
+          id: 2,
+          title: 'mock title 2',
+          body: 'mock body 2',
+        },
+      ])
+    )
+  }),
+]
+
+const server = setupServer(...handlers)
+
+beforeAll(() => {
+  server.listen()
+})
+
+afterEach(() => {
+  server.resetHandlers()
+})
+
+afterAll(() => {
+  server.close()
+})
+
+describe('/posts dummy data', () => {
   it('', async () => {
     render(
       <Posts
@@ -28,6 +72,24 @@ describe('', () => {
     ).toBeInTheDocument()
     expect(
       screen.getByText('userId: 2 ,id: 2 ,title: dummy title 2')
+    ).toBeInTheDocument()
+  })
+  it('/posts use msw', async () => {
+    const { page } = await getPage({
+      route: '/posts',
+    })
+    render(page)
+    // timeoutの設定例
+    expect(
+      await screen.findByText('Posts Page', undefined, {
+        timeout: 2000,
+      })
+    ).toBeInTheDocument()
+    expect(
+      screen.getByText('userId: 1 ,id: 1 ,title: mock title 1')
+    ).toBeInTheDocument()
+    expect(
+      screen.getByText('userId: 2 ,id: 2 ,title: mock title 2')
     ).toBeInTheDocument()
   })
 })
