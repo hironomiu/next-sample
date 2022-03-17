@@ -18,9 +18,12 @@ describe('Homeの表示テスト', () => {
     render(page)
 
     expect(await screen.findByText('Home Page')).toBeInTheDocument()
-    userEvent.click(screen.getByTestId('posts-nav'))
 
-    // TODO 画面が遷移できていない
+    userEvent.click(screen.getByTestId('counter-nav'))
+    expect(await screen.findByText('Counter Page')).toBeInTheDocument()
+
+    // TODO 画面が遷移できていない(時間がかかってる？)
+    userEvent.click(screen.getByTestId('posts-nav'))
     expect(await screen.findByText('Posts Page')).toBeInTheDocument()
   })
 })
