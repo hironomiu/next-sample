@@ -1,15 +1,15 @@
 import React from 'react'
 
-const PostLine = ({ line }) => {
+const PostLine = ({ post }) => {
   return (
     <div>
-      <p key={line.id}>
+      <p key={post.id}>
         {'userId: '}
-        {line.userId}
+        {post.userId}
         {' ,id: '}
-        {line.id}
+        {post.id}
         {' ,title: '}
-        {line.title}
+        {post.title}
       </p>
     </div>
   )

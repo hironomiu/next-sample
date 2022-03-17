@@ -7,15 +7,15 @@ const Posts: React.FC<{ posts: POST[] }> = ({ posts }) => {
   return (
     <Layout>
       <h1 className="text-2xl pb-10">Posts Page</h1>
-      {posts.map((line: POST) => (
-        <PostLine key={line.id} line={line} />
+      {posts.map((post: POST) => (
+        <PostLine key={post.id} post={post} />
       ))}
     </Layout>
   )
 }
 
 // TODO Build時に自身のAPIは叩けないのでエラーとなってる可能性がある
-// ↑一旦jsonplaceholderからデータを取得に変更
+// 一旦jsonplaceholderからデータを取得に変更
 
 export const getStaticProps: GetStaticProps = async () => {
   // const url = process.env.VERCEL_URL
