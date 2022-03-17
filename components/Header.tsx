@@ -10,8 +10,8 @@ const Header = () => {
         <span>Header</span>
         <Link href="/">
           <a
-            className={`py-1 px-1  hover:border-b-2 ${
-              router.pathname === '/' ? 'border-b-2' : null
+            className={`py-2 px-1 hover:border-b-2 ${
+              router.pathname === '/' ? 'border-b-2 border-orange-300' : null
             }`}
             data-testid="home-nav"
           >
@@ -20,8 +20,10 @@ const Header = () => {
         </Link>
         <Link href="/posts">
           <a
-            className={`py-1 px-1  hover:border-b-2 ${
-              router.pathname === '/posts' ? 'border-b-2' : null
+            className={`py-2 px-1  hover:border-b-2 ${
+              router.pathname === '/posts'
+                ? 'border-b-2 border-orange-300'
+                : null
             }`}
             data-testid="posts-nav"
           >
@@ -30,8 +32,10 @@ const Header = () => {
         </Link>
         <Link href="/tab-a">
           <a
-            className={`py-1 px-1  hover:border-b-2 ${
-              router.pathname === '/tab-a' ? 'border-b-2' : null
+            className={`py-2 px-1  hover:border-b-2 ${
+              router.pathname === '/tab-a'
+                ? 'border-b-2 border-orange-300'
+                : null
             }`}
             data-testid="tab-a-nav"
           >
@@ -40,8 +44,10 @@ const Header = () => {
         </Link>
         <Link href="/counter">
           <a
-            className={`py-1 px-1  hover:border-b-2 ${
-              router.pathname === '/counter' ? 'border-b-2' : null
+            className={`py-2 px-1  hover:border-b-2 ${
+              router.pathname === '/counter'
+                ? 'border-b-2 border-orange-300'
+                : null
             }`}
             data-testid="counter-nav"
           >
