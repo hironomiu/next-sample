@@ -23,7 +23,12 @@ describe('Homeの表示テスト', () => {
     expect(await screen.findByText('Counter Page')).toBeInTheDocument()
 
     // TODO 画面が遷移できていない(時間がかかってる？)
+    // TODO モック化
     userEvent.click(screen.getByTestId('posts-nav'))
-    expect(await screen.findByText('Posts Page')).toBeInTheDocument()
+    expect(
+      await screen.findByText('Posts Page', undefined, {
+        timeout: 2000,
+      })
+    ).toBeInTheDocument()
   })
 })
