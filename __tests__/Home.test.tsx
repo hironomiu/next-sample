@@ -9,7 +9,7 @@ initTestHelpers()
 describe('Homeの表示テスト', () => {
   it('Home Pageが表示されていること', async () => {
     render(<Home />)
-    expect(await screen.findByText('Home Page')).toBeInTheDocument()
+    expect(await screen.findByText('Home Page!')).toBeInTheDocument()
   })
   it('use next-page-tester', async () => {
     const { page } = await getPage({
@@ -17,7 +17,7 @@ describe('Homeの表示テスト', () => {
     })
     render(page)
 
-    expect(await screen.findByText('Home Page')).toBeInTheDocument()
+    expect(await screen.findByText('Home Page!')).toBeInTheDocument()
 
     userEvent.click(screen.getByTestId('counter-nav'))
     expect(await screen.findByText('Counter Page')).toBeInTheDocument()
