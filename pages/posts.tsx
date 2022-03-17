@@ -7,8 +7,8 @@ const Posts: React.FC<{ posts: POST[] }> = ({ posts }) => {
   return (
     <Layout>
       <h1 className="text-2xl pb-10">Posts Page</h1>
-      {posts.map((line: POST) => (
-        <PostLine key={line.id} line={line} />
+      {posts.map((post: POST) => (
+        <PostLine key={post.id} post={post} />
       ))}
     </Layout>
   )

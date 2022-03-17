@@ -1,15 +1,9 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import PostLine from '../components/parts/PostLine'
+import { POST } from '../types'
 
-type Line = {
-  id: number
-  userId: number
-  title: string
-  body: string
-}
-
-const line: Line = {
+const post: POST = {
   id: 1,
   userId: 1,
   title: 'dummy title 1',
@@ -18,7 +12,7 @@ const line: Line = {
 
 describe('parts/PostLine', () => {
   it('', () => {
-    render(<PostLine line={line} />)
+    render(<PostLine post={post} />)
     expect(
       screen.getByText('userId: 1 ,id: 1 ,title: dummy title 1')
     ).toBeInTheDocument()
