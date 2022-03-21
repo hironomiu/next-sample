@@ -24,5 +24,9 @@ describe('Homeの表示テスト', () => {
 
     userEvent.click(screen.getByTestId('tab-a-nav'))
     expect(await screen.findByText('TabA Page')).toBeInTheDocument()
+
+    userEvent.click(screen.getByTestId('posts-nav'))
+    // TODO 画面遷移
+    expect(await screen.findByText('Posts Page')).toBeInTheDocument()
   })
 })

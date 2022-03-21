@@ -4,6 +4,7 @@ import { POST } from '../types'
 import PostLine from '../components/parts/PostLine'
 
 const Posts: React.FC<{ posts: POST[] }> = ({ posts }) => {
+  // console.log('posts called')
   return (
     <Layout>
       <h1 className="text-2xl pb-10">Posts Page</h1>

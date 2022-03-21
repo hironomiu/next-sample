@@ -3,16 +3,17 @@ import { useRouter } from 'next/router'
 
 const Header = () => {
   const router = useRouter()
-  console.log(router.pathname)
   return (
     <header className="flex flex-row items-center justify-between w-screen h-10 bg-gray-400 px-4">
       <div className="space-x-3">
         <span>Header</span>
         <Link href="/">
           <a
-            className={`py-2 px-1 hover:border-b-2 ${
-              router.pathname === '/' ? 'border-b-2 border-orange-300' : null
-            }`}
+            className={
+              router?.pathname === '/'
+                ? 'py-2 px-1 hover:border-b-2 border-b-2 border-orange-300'
+                : 'py-2 px-1 hover:border-b-2'
+            }
             data-testid="home-nav"
           >
             Home
@@ -21,7 +22,7 @@ const Header = () => {
         <Link href="/posts">
           <a
             className={`py-2 px-1  hover:border-b-2 ${
-              router.pathname === '/posts'
+              router?.pathname === '/posts'
                 ? 'border-b-2 border-orange-300'
                 : null
             }`}
@@ -33,7 +34,7 @@ const Header = () => {
         <Link href="/tab-a">
           <a
             className={`py-2 px-1  hover:border-b-2 ${
-              router.pathname === '/tab-a'
+              router?.pathname === '/tab-a'
                 ? 'border-b-2 border-orange-300'
                 : null
             }`}
@@ -45,7 +46,7 @@ const Header = () => {
         <Link href="/counter">
           <a
             className={`py-2 px-1  hover:border-b-2 ${
-              router.pathname === '/counter'
+              router?.pathname === '/counter'
                 ? 'border-b-2 border-orange-300'
                 : null
             }`}
