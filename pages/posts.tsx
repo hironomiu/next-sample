@@ -23,11 +23,9 @@ export const getStaticProps: GetStaticProps = async () => {
   //   ? 'https://' + process.env.VERCEL_URL
   //   : // : 'http://localhost:3003'
   //     'https://jsonplaceholder.typicode.com/users?_limit=10'
-  console.log('called')
   const url = 'https://jsonplaceholder.typicode.com/posts?_limit=10'
   const response = await fetch(new URL(url).toString())
   const posts = await response.json()
-  console.log(posts)
   return {
     props: { posts },
   }
