@@ -17,6 +17,7 @@ const Posts: React.FC<{ posts: POST[] }> = ({ posts }) => {
 // TODO Build時に自身のAPIは叩けないのでエラーとなってる可能性がある
 // 一旦jsonplaceholderからデータを取得に変更
 
+// SSG
 export const getStaticProps: GetStaticProps = async () => {
   // const url = process.env.VERCEL_URL
   //   ? 'https://' + process.env.VERCEL_URL
@@ -25,7 +26,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const url = 'https://jsonplaceholder.typicode.com/posts?_limit=10'
   const response = await fetch(new URL(url).toString())
   const posts = await response.json()
-  console.log(posts)
   return {
     props: { posts },
   }
