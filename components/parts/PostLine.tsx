@@ -1,16 +1,19 @@
 import React from 'react'
+import Link from 'next/link'
 
 const PostLine = ({ post }) => {
   return (
     <div>
-      <p key={post.id}>
-        {'userId: '}
-        {post.userId}
-        {' ,id: '}
-        {post.id}
-        {' ,title: '}
-        {post.title}
-      </p>
+      <Link href={`/posts/${post.id}`}>
+        <p key={post.id}>
+          {'userId: '}
+          {post.userId}
+          {' ,id: '}
+          {post.id}
+          {' ,title: '}
+          {post.title}
+        </p>
+      </Link>
     </div>
   )
 }
