@@ -5,7 +5,11 @@ const PostLine = ({ post }) => {
   return (
     <div>
       <Link href={`/posts/${post.id}`}>
-        <p key={post.id} className="hover:cursor-pointer">
+        <p
+          key={post.id}
+          className="hover:cursor-pointer"
+          data-testid={`posts-${post.id}`}
+        >
           {'userId: '}
           {post.userId}
           {' ,id: '}

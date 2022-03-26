@@ -5,6 +5,7 @@ import { getPage, initTestHelpers } from 'next-page-tester'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 import 'whatwg-fetch'
+import userEvent from '@testing-library/user-event'
 
 initTestHelpers()
 
@@ -91,5 +92,7 @@ describe('/posts dummy data', () => {
     expect(
       screen.getByText('userId: 2 ,id: 2 ,title: mock title 2')
     ).toBeInTheDocument()
+    userEvent.click(screen.getByTestId('posts-1'))
+    expect(await screen.findByText('Post Data')).toBeInTheDocument()
   })
 })
