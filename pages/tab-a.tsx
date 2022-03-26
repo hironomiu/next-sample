@@ -1,6 +1,5 @@
 import Layout from '../components/Layout'
 import { useState } from 'react'
-import { handleRequest } from 'msw'
 
 const TabA = () => {
   const [input, setInput] = useState('')
