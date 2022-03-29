@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import Posts from '../pages/posts'
 import { getPage, initTestHelpers } from 'next-page-tester'
@@ -41,6 +41,7 @@ beforeAll(() => {
 
 afterEach(() => {
   server.resetHandlers()
+  cleanup()
 })
 
 afterAll(() => {
@@ -94,5 +95,26 @@ describe('/posts dummy data', () => {
     ).toBeInTheDocument()
     userEvent.click(screen.getByTestId('posts-1'))
     expect(await screen.findByText('Post Data')).toBeInTheDocument()
+  })
+  it('/posts use msw 404 eroor', async () => {
+    server.use(
+      rest.get(
+        'https://jsonplaceholder.typicode.com/posts?_limit=10',
+        (req, res, ctx) => {
+          // TODO function using "req.url.searchParams"
+          // const query = req.url.searchParams
+          // const _limit = query.get('_limit=10')
+          return res(ctx.status(404))
+        }
+      )
+    )
+    const { page } = await getPage({
+      route: '/posts',
+    })
+    render(page)
+    expect(
+      screen.getByText('This page could not be found.')
+    ).toBeInTheDocument()
+    // screen.debug()
   })
 })

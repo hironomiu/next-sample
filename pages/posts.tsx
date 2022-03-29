@@ -25,6 +25,11 @@ export const getStaticProps: GetStaticProps = async () => {
   //     'https://jsonplaceholder.typicode.com/users?_limit=10'
   const url = 'https://jsonplaceholder.typicode.com/posts?_limit=10'
   const response = await fetch(new URL(url).toString())
+  if (response.status !== 200) {
+    return {
+      notFound: true,
+    }
+  }
   const posts = await response.json()
   return {
     props: { posts },
